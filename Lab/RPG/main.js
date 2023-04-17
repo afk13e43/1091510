@@ -175,9 +175,10 @@ $(document).on("keydown",function(event){
         $("#player").css({"top":result.top+"px"});
         $("#player").css({"left":result.left+"px"});
         $("#player").toggle();
-        player.playVideo();
+        $("#timer").text("遊戲結束，撥放廣告，按Esc即可跳出");
         gameover=3;
         event.preventDefault();
+        player.playVideo();
         switch(event.code){
             case "Escape":
                 gameover=0;
@@ -316,9 +317,9 @@ $(document).on("keydown",function(event){
                 $("#player").css({"top":result.top+"px"});
                 $("#player").css({"left":result.left+"px"});
                 $("#player").toggle();
-                player.playVideo();
                 gameover=1;
                 $("#timer").text("遊戲結束，撥放廣告，按Esc即可跳出");
+                player.playVideo();
                 break;
             case 7:
                 if(mapArray[targetBlock.x][targetBlock.y]==7)
