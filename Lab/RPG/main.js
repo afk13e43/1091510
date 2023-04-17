@@ -147,6 +147,7 @@ $(document).on("keydown",function(event){
         event.preventDefault();
         switch(event.code){
             case "Escape":
+                $("#player").toggle();
                 gameover=0;
                 ctx.clearRect(enemyImgMain.x,enemyImgMain.y,gridLength,gridLength);
                 mapArray[enemyImgMain.y/70][enemyImgMain.x/70]=0;
