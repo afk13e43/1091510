@@ -24,7 +24,7 @@ function onYouTubeIframeAPIReady(){
 function onPlayerReady(event){
     // $("#playButton").on("click",function(){
     //     $("h2").text(player.getVideoData().title);
-    //     player.playVideo();
+        // player.playVideo();
     // });
 }
 //PlayerStateChange

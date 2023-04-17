@@ -309,7 +309,7 @@ $(document).on("keydown",function(event){
                 $("#talkBox").text("哈摟");
                 break;
             case 4:
-                $("#talkBox").text("抓到你囉 Game over，按Esc重新開始");
+                $("#talkBox").text("抓到你囉 P2勝利，按Esc重新開始");
                 const boxes = document.getElementById("myCanvas");
                 const result = boxes.getBoundingClientRect();
                 console.log(result);
