@@ -3,8 +3,8 @@ let currentPlay=0;
 function onYouTubeIframeAPIReady(){
  console.log("yt ready!");
  player=new YT.Player("player",{
-    height:"765",
-    width:"1360",
+    height:"450",
+    width:"800",
     videoId:playList[currentPlay],
     playerVars:{
         autoplay:0,//是否自動撥放
