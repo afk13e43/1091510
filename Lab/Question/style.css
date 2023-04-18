@@ -1,4 +1,5 @@
 body{
     text-align:center;
     background: url(back.jpg);
+    background-size: cover;
 }
