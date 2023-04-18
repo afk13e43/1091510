@@ -314,6 +314,12 @@ $(document).on("keydown",function(event){
                 const boxes = document.getElementById("myCanvas");
                 const result = boxes.getBoundingClientRect();
                 console.log(result);
+                enemyImgMain.x=targetImg.x;
+                enemyImgMain.y=targetImg.y;
+                console.log(enemyImgMain.x);
+                console.log(enemyImgMain.y);
+                mapArray[enemyImgMain.y/70][enemyImgMain.x/70]=3;
+                ctx.drawImage(enemy,enemy_cutImagePositionX,enemy_cutImagePositionY,48,48,enemyImgMain.x,enemyImgMain.y,gridLength,gridLength);
                 gameover=1;
                 $("#player").css({"top":result.top+"px"});
                 $("#player").css({"left":result.left+"px"});
