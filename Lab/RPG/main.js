@@ -314,10 +314,10 @@ $(document).on("keydown",function(event){
                 const boxes = document.getElementById("myCanvas");
                 const result = boxes.getBoundingClientRect();
                 console.log(result);
+                gameover=1;
                 $("#player").css({"top":result.top+"px"});
                 $("#player").css({"left":result.left+"px"});
                 $("#player").toggle();
-                gameover=1;
                 $("#timer").text("遊戲結束，撥放廣告，按Esc即可跳出");
                 player.playVideo();
                 break;
