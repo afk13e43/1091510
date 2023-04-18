@@ -15,7 +15,7 @@ $(function(){//儲存目前作答到第幾題
             $("#startButton").attr("value","下一題");
             if(first==0)
             {
-                $("body").append('<input id="returnButton" type="Button" value="重新開始">');
+                $("body").append('<br><br><br><br><br><input id="returnButton" type="Button" value="重新開始">');
                 $("#returnButton").on("click",function(){
                     currentQuiz=null;
                     $("#question").text("");//將選項區清空(可以試著先不寫)
