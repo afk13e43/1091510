@@ -152,7 +152,28 @@ $("div2 input").on("change",function(){
             var newdate=document.getElementById("inputdate").value.split('-');
             var newDate= new Date(newdate[0],newdate[1]-1,newdate[2]);
             nDate = (new Date(newDate.getTime()+7*x*millisecsPerDay)).toLocaleDateString().substring(5)
-            if(x%2==0)
+            if(stopD.indexOf(nDate)!=-1)
+        {
+            if(topic[x]===undefined)
+            {
+                $("#courseTable_set").append(
+                    "<tr>"
+                    +`<td style="color:lightgreen">${x+1}</td>`
+                    +`<td style="color:gray">${$("#day"+x).val()}</td>`
+                    +`<td style="color:gray">${$("#topic"+x).val()}</td>`
+                    +"</tr>"
+                    );
+            }
+            else
+            {
+                $("#courseTable_set").append("<tr>"
+                +`<td style="color:blue">${x+1}</td>`
+                +`<td style="color:gray">${$("#day"+x).val()}</td>`
+                +`<td style="color:gray">${$("#topic"+x).val()}</td>`
+                +"</tr>");
+            }
+        }
+        else {if(x%2==0)
             {
                 $("#courseTable_set").append(
                     "<tr>"
@@ -170,6 +191,6 @@ $("div2 input").on("change",function(){
                 +`<td style="color:#990000">${$("#topic"+x).val()}</td>`
                 +"</tr>");
             }
-        }
+        }}
     })
 });
