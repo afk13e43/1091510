@@ -281,13 +281,14 @@ $(document).on("keydown",function(event){
     else{
         targetBlock.x=-1;
         targetBlock.y=-1;
-    }//清空p2原本所在的位置
-    ctx.clearRect(enemyImgMain.x,enemyImgMain.y,gridLength,gridLength);
-    mapArray[enemyImgMain.y/70][enemyImgMain.x/70]=0;
+    }
     if(targetBlock.x!=-1&&targetBlock.y!=-1){
         switch(mapArray[targetBlock.x][targetBlock.y]){
             case 0://一般道路(可移動)
                 // $("#talkBox").text("");
+                //清空p2原本所在的位置
+                ctx.clearRect(enemyImgMain.x,enemyImgMain.y,gridLength,gridLength);
+                mapArray[enemyImgMain.y/70][enemyImgMain.x/70]=0;
                 enemyImgMain.x=targetImg.x;
                 enemyImgMain.y=targetImg.y;
                 console.log(enemyImgMain.x);
@@ -298,6 +299,10 @@ $(document).on("keydown",function(event){
                 // $("#talkBox").text("有山");
                 break;
             case 2://終點(可移動)
+                
+                //清空p2原本所在的位置
+                ctx.clearRect(enemyImgMain.x,enemyImgMain.y,gridLength,gridLength);
+                mapArray[enemyImgMain.y/70][enemyImgMain.x/70]=0;
                 // $("#talkBox").text("抵達終點");
                 enemyImgMain.x=targetImg.x;
                 enemyImgMain.y=targetImg.y;
@@ -310,6 +315,9 @@ $(document).on("keydown",function(event){
                 $("#talkBox").text("哈摟");
                 break;
             case 4:
+                //清空p2原本所在的位置
+                ctx.clearRect(enemyImgMain.x,enemyImgMain.y,gridLength,gridLength);
+                mapArray[enemyImgMain.y/70][enemyImgMain.x/70]=0;
                 $("#talkBox").text("抓到你囉，P2勝利，按Esc重新開始");
                 const boxes = document.getElementById("myCanvas");
                 const result = boxes.getBoundingClientRect();
@@ -334,6 +342,7 @@ $(document).on("keydown",function(event){
                     spider_web_stack[targetBlock.x][targetBlock.y]=spider_web_stack[targetBlock.x][targetBlock.y]-1;
                     if(spider_web_stack[targetBlock.x][targetBlock.y]==0)
                     {
+                        
                         mapArray[targetBlock.x][targetBlock.y]=0;
                         ctx.clearRect(targetBlock.x,targetBlock.y,gridLength,gridLength);
                     }
@@ -441,14 +450,15 @@ $(document).on("keydown",function(event){
     else{
         targetBlock.x=-1;
         targetBlock.y=-1;
-    }//清空主角原本所在的位置
-    if(mapArray[currentImgMain.y/70][currentImgMain.x/70]!=7)
-    {mapArray[currentImgMain.y/70][currentImgMain.x/70]=0;}
-    ctx.clearRect(currentImgMain.x,currentImgMain.y,gridLength,gridLength);
+    }
     if(targetBlock.x!=-1&&targetBlock.y!=-1){
         switch(mapArray[targetBlock.x][targetBlock.y]){
             case 0://一般道路(可移動)
                 // $("#talkBox").text("");
+                //清空主角原本所在的位置
+                if(mapArray[currentImgMain.y/70][currentImgMain.x/70]!=7)
+                {mapArray[currentImgMain.y/70][currentImgMain.x/70]=0;}
+                ctx.clearRect(currentImgMain.x,currentImgMain.y,gridLength,gridLength);
                 currentImgMain.x=targetImg.x;
                 currentImgMain.y=targetImg.y;
                 mapArray[currentImgMain.y/70][currentImgMain.x/70]=4;
@@ -458,6 +468,10 @@ $(document).on("keydown",function(event){
                 break;
             case 2://終點(可移動)
                 // $("#talkBox").text("抵達終點");
+                //清空主角原本所在的位置
+                if(mapArray[currentImgMain.y/70][currentImgMain.x/70]!=7)
+                {mapArray[currentImgMain.y/70][currentImgMain.x/70]=0;}
+                ctx.clearRect(currentImgMain.x,currentImgMain.y,gridLength,gridLength);
                 currentImgMain.x=targetImg.x;
                 currentImgMain.y=targetImg.y;
                 mapArray[currentImgMain.y/70][currentImgMain.x/70]=4;
@@ -466,6 +480,10 @@ $(document).on("keydown",function(event){
                 $("#talkBox").text("哈摟");
                 break;
             case 7:
+                            //清空主角原本所在的位置
+                if(mapArray[currentImgMain.y/70][currentImgMain.x/70]!=7)
+                {mapArray[currentImgMain.y/70][currentImgMain.x/70]=0;}
+                ctx.clearRect(currentImgMain.x,currentImgMain.y,gridLength,gridLength);
                 currentImgMain.x=targetImg.x;
                 currentImgMain.y=targetImg.y;
                 break;
