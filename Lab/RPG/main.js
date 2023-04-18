@@ -176,7 +176,6 @@ $(document).on("keydown",function(event){
         $("#player").css({"left":result.left+"px"});
         $("#player").toggle();
         $("#timer").text("遊戲結束，撥放廣告，按Esc即可跳出");
-        gameover=3;
         event.preventDefault();
         player.playVideo();
         switch(event.code){
@@ -195,6 +194,7 @@ $(document).on("keydown",function(event){
                     "y":9*gridLength
                 };   
                 $("#talkBox").text("重新開始");
+                gameover=3;
                 this.location.reload();
         }    
 
